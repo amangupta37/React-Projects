@@ -9,7 +9,7 @@ const Backdrop = (props) => {
           <button id="cancle" onClick={props.PassEvent}>
             Cancle
           </button>
-          <button id="cnfrm" onClick={props.PassEvent}>
+          <button id="cnfrm" onClick={props.Confirm}>
             Confirm
           </button>
         </div>

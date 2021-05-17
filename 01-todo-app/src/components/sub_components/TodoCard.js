@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Backdrop from "./Backdrop";
 const TodoCard = (props) => {
   const [state, setstate] = useState(false);
+  const [data, setData] = useState(props.text);
 
   const deleteText = () => {
     setstate(true);
@@ -11,10 +12,17 @@ const TodoCard = (props) => {
     setstate(false);
   };
 
+  const confirm = () => {
+    setstate(false);
+    setData("");
+
+    console.log("success");
+  };
+
   return (
     <div className="todo-card">
       <div className="todo-name">
-        <h2 id="todo-title">{props.text}</h2>
+        <h2 id="todo-title">{data}</h2>
       </div>
       <div className="operations">
         <div className="delete">
@@ -23,7 +31,7 @@ const TodoCard = (props) => {
           </button>
         </div>
       </div>
-      {state ? <Backdrop PassEvent={cancle} /> : null}
+      {state ? <Backdrop PassEvent={cancle} Confirm={confirm} /> : null}
     </div>
   );
 };
