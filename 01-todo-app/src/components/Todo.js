@@ -5,10 +5,8 @@ const Todo = () => {
   return (
     <div className="todo">
       <TodoCard text="Complete React now 🔥 " />
-
       <TodoCard text="Complete JS now 🔥 " />
-
-      <TodoCard text="Complete CSS3 now 🔥 " />
+      <TodoCard text="Complete CSS now 🔥 " />
     </div>
   );
 };
