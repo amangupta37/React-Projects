@@ -1,12 +1,35 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../meetups/NewMettup.css";
-const NewMettupForm = () => {
+const NewMettupForm = (props) => {
+  const InputTitle = useRef();
+  const InputUrl = useRef();
+  const InputAddress = useRef();
+  const InputDiscription = useRef();
+
+  const handleForm = (event) => {
+    event.preventDefault();
+
+    const enteredTitle = InputTitle.current.value;
+    const enteredUrl = InputUrl.current.value;
+    const enteredAddress = InputAddress.current.value;
+    const enteredDiscription = InputDiscription.current.value;
+
+    const formdata = {
+      Title: enteredTitle,
+      Url: enteredUrl,
+      Address: enteredAddress,
+      Discription: enteredDiscription,
+    };
+
+    props.AddToFirebase(formdata);
+  };
+
   return (
     <div className="form-box">
       <h1>Add MeetUp</h1>
 
       <div className="form-submit">
-        <form className="form-items">
+        <form className="form-items" onSubmit={handleForm}>
           <div className="row1">
             <label htmlFor="title">Title</label>
             <input
@@ -15,6 +38,7 @@ const NewMettupForm = () => {
               placeholder="Enter Title"
               autoComplete="off"
               required
+              ref={InputTitle}
             ></input>
           </div>
 
@@ -26,6 +50,7 @@ const NewMettupForm = () => {
               autoComplete="off"
               placeholder="Enter Image Url"
               required
+              ref={InputUrl}
             ></input>
           </div>
           <div className="row1">
@@ -36,6 +61,7 @@ const NewMettupForm = () => {
               placeholder="Enter Address"
               autoComplete="off"
               required
+              ref={InputAddress}
             ></input>
           </div>
 
@@ -46,6 +72,7 @@ const NewMettupForm = () => {
               id="description"
               placeholder="Enter Discription"
               required
+              ref={InputDiscription}
             ></textarea>
           </div>
           <div className="btn">
