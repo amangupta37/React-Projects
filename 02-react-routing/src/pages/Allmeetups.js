@@ -1,4 +1,5 @@
 import React from "react";
+import MeetupList from "../meetups/MeetupList";
 
 const DUMMY_DATA = [
   {
@@ -20,20 +21,14 @@ const DUMMY_DATA = [
       "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
   },
 ];
-const Page1 = () => {
+const Allmeetups = () => {
   return (
-    <div className="page1">
-      <h1>this is page 1 content</h1>
+    <div className="Allmeetups">
       <div className="dummy-data">
-      <ul>
-        {DUMMY_DATA.map((value) => {
-          return <li key={value.id}>{value.title}</li>;
-        })}
-      </ul>
+        <MeetupList meetups={DUMMY_DATA} />
       </div>
-     
     </div>
   );
 };
 
-export default Page1;
+export default Allmeetups;

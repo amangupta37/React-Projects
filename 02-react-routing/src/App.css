@@ -3,9 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-.dummy-data {
-  width: 70%;
-  margin: 0 auto;
-  background: red;
+.page3 {
+  height: 100vh;
+  background: #000;
 }

@@ -1,6 +1,5 @@
 import React from "react";
-
-const Page2 = () => {
+const Favorites = () => {
   return (
     <div className="page2">
       <h1>hello from page 2</h1>
@@ -8,4 +7,4 @@ const Page2 = () => {
   );
 };
 
-export default Page2;
+export default Favorites;

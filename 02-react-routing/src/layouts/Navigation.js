@@ -17,12 +17,12 @@ const Navigation = () => {
             </Link>
           </li>
           <li>
-            <Link className={classes.style} to="/page2">
+            <Link className={classes.style} to="/Favorites">
               Add meetup
             </Link>
           </li>
           <li>
-            <Link className={classes.style} to="/page3">
+            <Link className={classes.style} to="/NewMeetup">
               My favorites
             </Link>
           </li>

@@ -1,8 +1,8 @@
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
-import Page1 from "./pages/Page1";
-import Page2 from "./pages/Page2";
-import Page3 from "./pages/Page3";
+import Allmeetups from "./pages/Allmeetups";
+import Favorites from "./pages/Favorites";
+import NewMeetups from "./pages/NewMeetup";
 import Navigation from "./layouts/Navigation";
 
 const App = () => {
@@ -11,13 +11,13 @@ const App = () => {
       <Navigation />
       <Switch>
         <Route path="/" exact>
-          <Page1 />
+          <Allmeetups />
         </Route>
-        <Route path="/page2">
-          <Page2 />
+        <Route path="/NewMeetup">
+          <Favorites />
         </Route>
-        <Route path="/page3">
-          <Page3 />
+        <Route path="/Favorites">
+          <NewMeetups />
         </Route>
       </Switch>
     </div>
