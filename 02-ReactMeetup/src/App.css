@@ -3,6 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.Allmeetups {
+  height: 100vh;
+  background: #000;
+}
+.dummy-data {
+  height: 100vh;
+  background: #000;
+}
 .page3 {
   height: 100vh;
   background: #000;

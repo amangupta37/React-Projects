@@ -35,7 +35,7 @@ const NewMettupForm = (props) => {
             <input
               type="text"
               id="title"
-              placeholder="Enter Title"
+              placeholder="Enter event title"
               autoComplete="off"
               required
               ref={InputTitle}
@@ -48,7 +48,7 @@ const NewMettupForm = (props) => {
               type="url"
               id="image"
               autoComplete="off"
-              placeholder="Enter Image Url"
+              placeholder="Enter image url"
               required
               ref={InputUrl}
             ></input>
@@ -58,7 +58,7 @@ const NewMettupForm = (props) => {
             <input
               type="text"
               id="address"
-              placeholder="Enter Address"
+              placeholder="Enter event address"
               autoComplete="off"
               required
               ref={InputAddress}
@@ -70,7 +70,7 @@ const NewMettupForm = (props) => {
             <textarea
               type="text"
               id="description"
-              placeholder="Enter Discription"
+              placeholder="Enter event discription"
               required
               ref={InputDiscription}
             ></textarea>

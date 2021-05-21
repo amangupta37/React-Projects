@@ -21,7 +21,7 @@
   border-radius: 0.5rem;
 }
 .form-items:hover {
-  border: 2px solid #00b4d8;
+  border: 2px solid #1da1f2;
 }
 
 .row1 {
@@ -44,6 +44,10 @@ input {
   font-family: sans-serif;
   border-radius: 0.2rem;
 }
+
+input:hover {
+  border: 2px solid #1da1f2;
+}
 textarea {
   width: 400px;
   height: 120px;
@@ -56,6 +60,10 @@ textarea {
   font-family: sans-serif;
   padding-top: 1rem;
   border-radius: 0.2rem;
+}
+
+textarea:hover {
+  border: 2px solid #1da1f2;
 }
 label {
   padding-top: 1rem;
@@ -70,7 +78,7 @@ button {
   border: none;
   outline: none;
   font-size: 1rem;
-  background: #00b4d8;
+  background: #1da1f2;
   border-radius: 0.5rem;
   cursor: pointer;
   color: #ffff;
