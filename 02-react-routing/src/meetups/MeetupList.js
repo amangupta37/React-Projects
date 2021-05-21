@@ -5,16 +5,19 @@ const MeetupList = (props) => {
   return (
     <div className="card-list">
       <ul className="meetuplist">
-        {props.meetups.map((value) => (
-          <MeetupItem
-            id={value.id}
-            title={value.title}
-            key={value.id}
-            image={value.image}
-            address={value.address}
-            description={value.description}
-          />
-        ))}
+        {props.meetups
+          .slice(0)
+          .reverse()
+          .map((value) => (
+            <MeetupItem
+              id={value.id}
+              title={value.Title}
+              key={value.id}
+              image={value.Url}
+              address={value.Address}
+              description={value.Discription}
+            />
+          ))}
       </ul>
     </div>
   );

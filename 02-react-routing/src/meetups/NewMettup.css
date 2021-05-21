@@ -12,19 +12,23 @@
 .form-items {
   width: 100%;
   height: 70vh;
-  background: #000;
+  background: #080808;
   display: grid;
   place-items: center;
   grid-gap: 1rem;
-  border: 1px solid #00b4d8;
-  padding: 1.5rem;
+  border: 2px solid #383636;
+  padding: 2rem;
+  border-radius: 0.5rem;
 }
+.form-items:hover {
+  border: 2px solid #00b4d8;
+}
+
 .row1 {
-  width: 80%;
-  background: #000;
+  width: 90%;
+  /* background: #001219; */
   display: flex;
   justify-content: space-between;
-  font-family: serif;
   font-size: 1.3rem;
   color: #ffff;
 }
@@ -56,8 +60,8 @@ textarea {
 label {
   padding-top: 1rem;
   font-size: 1.5rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #cfc7c7;
+  font-family: monospace;
 }
 
 button {

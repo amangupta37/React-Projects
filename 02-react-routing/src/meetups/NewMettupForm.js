@@ -43,7 +43,7 @@ const NewMettupForm = (props) => {
           </div>
 
           <div className="row1">
-            <label htmlFor="image">Image</label>
+            <label htmlFor="image">Poster</label>
             <input
               type="url"
               id="image"
