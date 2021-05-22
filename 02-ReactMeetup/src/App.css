@@ -16,3 +16,17 @@
   height: 100vh;
   background: #000;
 }
+.preloader {
+  height: 100vh;
+  background: #000;
+  padding-top: 25rem;
+}
+.style-Pre {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+#style-preloader {
+  width: 100px;
+  height: 100px;
+}

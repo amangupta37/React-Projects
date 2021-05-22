@@ -16,6 +16,9 @@ const MeetupItem = (props) => {
         </div>
         <div className="address">
           <h3>{props.address}</h3>
+          <div className="like-btn">
+            <button>Add to Fav</button>
+          </div>
         </div>
       </div>
     </div>

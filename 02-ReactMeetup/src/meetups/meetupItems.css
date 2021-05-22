@@ -22,7 +22,7 @@
 
 .meetup-card {
   width: 60%;
-  height: 700px;
+  height: auto;
   margin: 0 auto;
 }
 
@@ -46,6 +46,12 @@ img {
 }
 .address {
   width: 100%;
-  text-align: center;
-  padding-top: 0.5rem;
+  padding-top: 1.3rem;
+  display: flex;
+}
+
+.like-btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }

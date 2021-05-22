@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MeetupList from "../meetups/MeetupList";
-
+import Preloader from "../preloader/Preloader.gif";
 const Allmeetups = () => {
   //Fetching data from the database
 
@@ -31,8 +31,10 @@ const Allmeetups = () => {
 
   if (loading) {
     return (
-      <section>
-        <h2>loading wait.....</h2>
+      <section className="preloader">
+        <div className="style-Pre">
+          <img src={Preloader} alt="gif" id="style-preloader" />
+        </div>
       </section>
     );
   }
