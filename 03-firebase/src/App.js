@@ -1,23 +1,33 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 import { firestore } from "./firebase";
 
 function App() {
-  const fun = () => {
-    const post = firestore
-      .collection("post")
-      .get()
-      .then((snapshot) => {
-        return console.log({ snapshot });
+  const [state, setstate] = useState([]);
+  console.log(state);
+
+  useEffect(() => {
+    const foo = async () => {
+      const snapshot = await firestore.collection("post").get();
+
+      snapshot.forEach((doc) => {
+        const id = doc.id;
+        const data = doc.data();
+
+        console.log(data.content);
+
+        console.log(doc.id);
+
+        return setstate();
       });
+    };
 
-    console.log({ post });
-  };
-
-  fun();
+    foo();
+  }, []);
 
   return (
     <div className="App">
-      <h1>hello world !!</h1>
+      <h1>hello</h1>
     </div>
   );
 }
