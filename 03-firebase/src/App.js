@@ -1,25 +1,26 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { firestore } from "./firebase";
+import ShowData from "./components/ShowData";
 
 function App() {
   const [state, setstate] = useState([]);
-  console.log(state);
+  // console.log(state);
 
   useEffect(() => {
     const foo = async () => {
+      //fetching data from firestore
       const snapshot = await firestore.collection("post").get();
 
-      snapshot.forEach((doc) => {
+      const arr = [];
+      snapshot.docs.map((doc) => {
         const id = doc.id;
         const data = doc.data();
-
-        console.log(data.content);
-
-        console.log(doc.id);
-
-        return setstate();
+        return arr.push({ id, data });
       });
+
+      console.log(arr);
+      setstate(arr);
     };
 
     foo();
@@ -27,7 +28,28 @@ function App() {
 
   return (
     <div className="App">
-      <h1>hello</h1>
+      <div className="read-data">
+        <div className="operation-1">
+          <h1>1. Reading Data From FireStore</h1>
+        </div>
+
+        <div className="dynamic-data">
+          {state
+            .slice(0)
+            .reverse()
+            .map((value) => {
+              return (
+                <ShowData
+                  id={value.id}
+                  title={value.data.title}
+                  content={value.data.content}
+                  user={value.data.user.name}
+                  age={value.data.user.age}
+                />
+              );
+            })}
+        </div>
+      </div>
     </div>
   );
 }
