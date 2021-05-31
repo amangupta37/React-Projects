@@ -8,10 +8,10 @@ const ShowData = (props) => {
       </div>
 
       <div className="discription">
-        <p>Story Background : "{props.content}"</p>
+        {/*<p>Story Background : "{props.content}"</p>
         <h3>Ticket Number : {props.id}</h3>
         <h3>Ticket Holder : {props.user}</h3>
-        <h3>age {props.age}</h3>
+          <h3>age {props.age}</h3>*/}
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { firestore } from "./firebase";
 import ShowData from "./components/ShowData";
+import InputData from "./components/InputData";
 
 function App() {
   const [state, setstate] = useState([]);
@@ -26,6 +27,18 @@ function App() {
     foo();
   }, []);
 
+  // const sendDatain = () => {
+  //   firestore.collection("post").add({
+  //     content: "aman",
+  //     title: "the not a giver",
+
+  //     user: {
+  //       name: "aman",
+  //       age: 20,
+  //     },
+  //   });
+  // };
+
   return (
     <div className="App">
       <div className="read-data">
@@ -33,23 +46,25 @@ function App() {
           <h1>1. Reading Data From FireStore</h1>
         </div>
 
+        <div>
+          <InputData />
+        </div>
         <div className="dynamic-data">
-          {state
-            .slice(0)
-            .reverse()
-            .map((value) => {
-              return (
-                <ShowData
-                  id={value.id}
-                  title={value.data.title}
-                  content={value.data.content}
-                  user={value.data.user.name}
-                  age={value.data.user.age}
-                />
-              );
-            })}
+          {state.map((value) => {
+            return (
+              <ShowData
+                id={value.id}
+                title={value.data.title}
+                // content={value.data.content}
+                // user={value.data.user.name}
+                // age={value.data.user.age}
+              />
+            );
+          })}
         </div>
       </div>
+
+      <div>{/* <button onClick={sendDatain}>clik here br</button> */}</div>
     </div>
   );
 }

@@ -8,14 +8,14 @@
   width: 100%;
   height: 100vh;
   background: #000;
+
+  overflow-y: scroll;
 }
 
 .data {
   width: 50%;
-
   margin: 0 auto;
   margin-top: 5rem;
-
   display: grid;
   grid-gap: 1rem;
   place-items: center;
@@ -34,4 +34,39 @@
 .discription {
   display: grid;
   grid-gap: 0.5rem;
+}
+
+.input-data {
+  width: 100%;
+
+  display: grid;
+  place-items: center;
+  margin-top: 2rem;
+}
+.input-box {
+  width: 20%;
+}
+
+input {
+  width: 100%;
+  height: 2rem;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: #464040;
+  color: #ffff;
+}
+
+.btn {
+  margin-top: 2rem;
+  width: 6%;
+}
+
+button {
+  width: 100%;
+  height: 2rem;
+  font-size: 1rem;
 }
