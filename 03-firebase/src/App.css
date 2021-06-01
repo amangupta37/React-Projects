@@ -70,3 +70,6 @@ button {
   height: 2rem;
   font-size: 1rem;
 }
+.show-data {
+  color: red;
+}

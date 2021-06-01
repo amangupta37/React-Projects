@@ -2,53 +2,53 @@ import React, { useState, useEffect } from "react";
 import { firestore } from "../firebase";
 
 const InputData = (props) => {
-  const [userInput, setuserInput] = useState([]);
+  const [storedUsersInput, setstoredUsersInput] = useState([]);
 
-  const [pushData, setpushData] = useState("");
+  const [userText, setuserText] = useState("");
 
-  const store = (e) => {
-    let newdata = e.target.value;
-
-    setpushData(newdata);
+  const storeData = (e) => {
+    const userInput = e.target.value;
+    setuserText(userInput);
   };
 
   const addData = () => {
-    setuserInput([...userInput, pushData]);
+    setstoredUsersInput([...storedUsersInput, userText]);
+    setuserText("");
   };
 
-  useEffect(() => {
-    //adding data to firestore
+  const StoreDataByKeyPress = (press) => {
+    if (press.key === "Enter") {
+      addData();
+    }
+  };
 
-    userInput.map((val) => {
-      const realdata = {
-        title: val,
-      };
-      return firestore.collection("post").add(realdata);
-    });
-  }, [userInput]);
-
-  console.log("this is use data" + userInput);
   return (
     <div className="input-data">
       <div className="input-box">
         <input
           type="text"
           id="input-text"
-          onChange={store}
+          onChange={storeData}
+          onKeyPress={StoreDataByKeyPress}
+          value={userText}
           autoComplete="off"
           required
         />
       </div>
-
       <div className="btn">
-        <button onClick={addData} id="btn-ne" disabled={!pushData}>
+        <button onClick={addData} id="btn-ne" disabled={!userText}>
           Add me
         </button>
       </div>
-
-      <div>
-        {userInput.map((value) => {
-          return <h1 style={{ color: "red" }}>{value}</h1>;
+      <div className="show-data">
+        {storedUsersInput.map((value) => {
+          return (
+            <ul>
+              <li>
+                <h1>{value}</h1>
+              </li>
+            </ul>
+          );
         })}
       </div>
     </div>
