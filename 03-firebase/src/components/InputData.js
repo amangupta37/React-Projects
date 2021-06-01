@@ -12,15 +12,25 @@ const InputData = (props) => {
   };
 
   const addData = () => {
-    setstoredUsersInput([...storedUsersInput, userText]);
+    setstoredUsersInput([userText]);
     setuserText("");
   };
 
-  const StoreDataByKeyPress = (press) => {
+  const storeDataByKeyPress = (press) => {
     if (press.key === "Enter") {
       addData();
     }
   };
+
+  useEffect(() => {
+    storedUsersInput.map((value) => {
+      const userInputObject = {
+        title: value,
+      };
+
+      return firestore.collection("post").add(userInputObject);
+    });
+  }, [storedUsersInput]);
 
   return (
     <div className="input-data">
@@ -29,7 +39,7 @@ const InputData = (props) => {
           type="text"
           id="input-text"
           onChange={storeData}
-          onKeyPress={StoreDataByKeyPress}
+          onKeyPress={storeDataByKeyPress}
           value={userText}
           autoComplete="off"
           required
@@ -39,17 +49,6 @@ const InputData = (props) => {
         <button onClick={addData} id="btn-ne" disabled={!userText}>
           Add me
         </button>
-      </div>
-      <div className="show-data">
-        {storedUsersInput.map((value) => {
-          return (
-            <ul>
-              <li>
-                <h1>{value}</h1>
-              </li>
-            </ul>
-          );
-        })}
       </div>
     </div>
   );

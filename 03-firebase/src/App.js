@@ -20,12 +20,11 @@ function App() {
         return arr.push({ id, data });
       });
 
-      console.log(arr);
       setstate(arr);
     };
 
     foo();
-  }, []);
+  }, [state]);
 
   // const sendDatain = () => {
   //   firestore.collection("post").add({
