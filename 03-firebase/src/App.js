@@ -26,18 +26,6 @@ function App() {
     foo();
   }, [state]);
 
-  // const sendDatain = () => {
-  //   firestore.collection("post").add({
-  //     content: "aman",
-  //     title: "the not a giver",
-
-  //     user: {
-  //       name: "aman",
-  //       age: 20,
-  //     },
-  //   });
-  // };
-
   return (
     <div className="App">
       <div className="read-data">
