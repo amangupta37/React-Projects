@@ -12,8 +12,9 @@
   overflow-y: scroll;
 }
 
-.data {
+.userDeatils-card {
   width: 50%;
+  background: #000;
   margin: 0 auto;
   margin-top: 5rem;
   display: grid;
