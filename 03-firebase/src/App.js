@@ -1,59 +1,35 @@
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import { firestore } from "./firebase";
-import ShowData from "./components/ShowData";
-import InputData from "./components/InputData";
+import Todo from "./Todo";
+import SignUp from "./SignUp";
+const App = () => {
+  const [userAuth, setuserAuth] = useState(false);
 
-function App() {
-  const [state, setstate] = useState([]);
-  // console.log(state);
+  const [userData, setuserData] = useState([null]);
 
-  useEffect(() => {
-    const foo = async () => {
-      //fetching data from firestore
-      const snapshot = await firestore.collection("post").get();
+  // const [passUserData, setpassUserData] = useState([]);
 
-      const arr = [];
-      snapshot.docs.map((doc) => {
-        const id = doc.id;
-        const data = doc.data();
-        return arr.push({ id, data });
-      });
+  const passUserData = [];
 
-      setstate(arr);
-    };
+  if (userAuth === true) {
+    passUserData.push(userData);
 
-    foo();
-  }, [state]);
+    // console.log(passUserData);
+
+    // passUserData.map((val) => {
+    //   return console.log(val.name);
+    // });
+  }
 
   return (
     <div className="App">
-      <div className="read-data">
-        <div className="operation-1">
-          <h1>1. Reading Data From FireStore</h1>
-        </div>
-
-        <div>
-          <InputData />
-        </div>
-        <div className="dynamic-data">
-          {state.map((value) => {
-            return (
-              <ShowData
-                id={value.id}
-                title={value.data.title}
-                // content={value.data.content}
-                // user={value.data.user.name}
-                // age={value.data.user.age}
-              />
-            );
-          })}
-        </div>
-      </div>
-
-      <div>{/* <button onClick={sendDatain}>clik here br</button> */}</div>
+      {userAuth ? (
+        <Todo usersInfo={passUserData} logout={setuserAuth} />
+      ) : (
+        <SignUp value={setuserAuth} usersData={setuserData} />
+      )}
     </div>
   );
-}
+};
 
 export default App;

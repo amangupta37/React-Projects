@@ -1,16 +1,20 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
-
+import "firebase/auth";
 const app = firebase.initializeApp({
-  apiKey: "AIzaSyB6J2E2HxZaKi6y1LisJlEgp1Mwqq1AaLw",
-  authDomain: "bloggingapp-12c34.firebaseapp.com",
-  projectId: "bloggingapp-12c34",
-  storageBucket: "bloggingapp-12c34.appspot.com",
-  messagingSenderId: "873599162218",
-  appId: "1:873599162218:web:7e37544957f9159795b713",
+  apiKey: "AIzaSyDKxUb4hfAh0rUmB9gGTDljHEWFVws1qXM",
+  authDomain: "bloggingapp-17751.firebaseapp.com",
+  projectId: "bloggingapp-17751",
+  storageBucket: "bloggingapp-17751.appspot.com",
+  messagingSenderId: "595612801547",
+  appId: "1:595612801547:web:7c87ca2d9029e42165450e",
 });
 
 export const firestore = firebase.firestore();
+
+export const auth = firebase.auth();
+
+export const provider = new firebase.auth.GoogleAuthProvider();
 
 window.firebase = firebase;
 

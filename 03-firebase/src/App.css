@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.App {
+.Todo {
   width: 100%;
   height: 100vh;
   background: #000;
@@ -129,4 +129,60 @@ button {
 #cbtn {
   background: purple;
   color: #ffff;
+}
+
+.signup {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+}
+.app-name-title {
+  width: 50%;
+  height: 0;
+  margin: 0 auto;
+  padding-top: 10rem;
+
+  color: #e2d2d2;
+  text-align: center;
+  font-family: monospace;
+}
+.logo {
+  width: 20%;
+  margin: 0 auto;
+  margin-top: 5rem;
+  display: grid;
+  place-items: center;
+}
+
+#g-logo {
+  width: 180px;
+  height: 40px;
+  cursor: pointer;
+}
+#g-logo:hover {
+  transform: scale(0.98);
+}
+
+.user {
+  width: 20%;
+  position: absolute;
+  left: 3rem;
+  top: 2rem;
+  color: #464040;
+}
+
+img {
+  border-radius: 0.2rem;
+  border: 2px solid #464040;
+}
+
+.user-name {
+  color: #ffff;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.logout:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }

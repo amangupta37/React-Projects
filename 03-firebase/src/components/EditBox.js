@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { firestore } from "../firebase";
 
 const EditBox = (props) => {
-  const [holdUpdatedVal, setholdUpdatedVal] = useState("");
+  const [holdUpdatedVal, setholdUpdatedVal] = useState(props.titleValue);
 
   const updatedInput = (e) => {
     const updatedVal = e.target.value;
