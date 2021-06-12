@@ -9,8 +9,14 @@ const SignUp = (props) => {
         name: uData.user.displayName,
         image: uData.user.photoURL,
       };
+
+      localStorage.setItem("pageRedirect", JSON.stringify(true));
+
+      localStorage.setItem("googleData", JSON.stringify(googleUserData));
+
       props.value(true);
-      props.usersData(googleUserData);
+
+      console.log(googleUserData);
     });
   };
 

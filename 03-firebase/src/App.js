@@ -3,22 +3,14 @@ import "./App.css";
 import Todo from "./Todo";
 import SignUp from "./SignUp";
 const App = () => {
-  const [userAuth, setuserAuth] = useState(false);
-
-  const [userData, setuserData] = useState([null]);
-
-  // const [passUserData, setpassUserData] = useState([]);
+  const [userAuth, setuserAuth] = useState(
+    JSON.parse(localStorage.getItem("pageRedirect"))
+  );
 
   const passUserData = [];
 
   if (userAuth === true) {
-    passUserData.push(userData);
-
-    // console.log(passUserData);
-
-    // passUserData.map((val) => {
-    //   return console.log(val.name);
-    // });
+    passUserData.push(JSON.parse(localStorage.getItem("googleData")));
   }
 
   return (
@@ -26,7 +18,7 @@ const App = () => {
       {userAuth ? (
         <Todo usersInfo={passUserData} logout={setuserAuth} />
       ) : (
-        <SignUp value={setuserAuth} usersData={setuserData} />
+        <SignUp value={setuserAuth} />
       )}
     </div>
   );

@@ -4,6 +4,7 @@ import ShowData from "./components/ShowData";
 import InputData from "./components/InputData";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 // import { auth } from "./firebase";
+import { auth, provider } from "./firebase";
 
 function Todo(props) {
   const [userProfile, setuserProfile] = useState("");
@@ -39,7 +40,10 @@ function Todo(props) {
   }, [props.usersInfo]);
 
   const logout = () => {
-    props.logout(false);
+    auth.signOut().then(() => {
+      props.logout(false);
+      localStorage.clear();
+    });
   };
 
   return (
