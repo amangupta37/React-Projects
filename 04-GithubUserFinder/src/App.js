@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
 import Addcard from "./components/Addcard";
+import Header from "./components/Header";
 import Usercard from "./components/Usercard";
 
 class App extends React.Component {
   state = {
-    userInput: "",
+    userInput: [],
   };
 
   getUserInput = (val) => {
@@ -21,6 +22,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <h1>The Github User Finder</h1>
         <Addcard updateUserInput={this.getUserInput} />
         <Usercard searchUser={this.state.userInput} />
