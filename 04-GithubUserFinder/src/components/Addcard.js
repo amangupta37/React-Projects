@@ -6,13 +6,21 @@ class Addcard extends React.Component {
     name: "",
   };
 
-  handleSubmit = async (userInput) => {
-    const response = await axios.get(
-      `https://api.github.com/users/${userInput}`
-    );
-    const data = response.data;
+  githubArr = [];
 
-    this.props.updateUserInput(data);
+  handleSubmit = async (userInput) => {
+    await axios
+      .get(`https://api.github.com/users/${userInput}`)
+      .then((res) => {
+        const data = res.data;
+
+        this.githubArr.push(data);
+
+        return this.props.updateUserInput(this.githubArr);
+      })
+      .catch((err) => {
+        return alert("User Not Found !!!");
+      });
   };
 
   takeUserInput = (e) => {
