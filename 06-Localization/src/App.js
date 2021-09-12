@@ -42,7 +42,11 @@ function App() {
     getUserLocation();
   }, []);
 
-  return <h2>{t("Welcome to React")}</h2>;
+  return (
+    <div className="localiztaion">
+      <h2>{t("Welcome to React")}</h2>
+    </div>
+  );
 }
 
 export default App;
